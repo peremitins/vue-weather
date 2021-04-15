@@ -6,7 +6,7 @@
           type="text" 
           class="search-bar" 
           placeholder="Search..."
-          @keyup="fetchWeather"
+          @keyup.enter="fetchWeather"
           v-model="query"
         >
       </div>
@@ -35,14 +35,17 @@ export default {
     return {
       api_key: 'ab96b8af98e69f95d59bf51a0d5968e7',
       url_base: 'https://api.openweathermap.org/data/2.5/',
-      query: 'krasnodar',
+      query: 'краснодар',
       weather: {},
       icon: ''
     }
   },
+  created() {
+    this.fetchWeather();
+  },
   methods: {
-    fetchWeather(e) {
-      if (e.key == 'Enter') {
+    fetchWeather() {
+      
         fetch(`${this.url_base}weather?q=${this.query}&units=metric&appid=${this.api_key}&lang=ru`)
         .then(response => response.json())
         .then(data => {
@@ -51,7 +54,6 @@ export default {
           this.query = '';
         })
         
-      }
     },
     dateBuilder() {
       let d = new Date();
