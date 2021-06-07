@@ -1,7 +1,7 @@
 # vue-weather
 ##### https://allfreelance.github.io/vue-weather/
 
-> Цeather forecast App with city search<br>
+> Weather forecast App with city search<br>
 > Used HTML, CSS, JS, Vue, Git.
 
 [![](https://github.com/allfreelance/vue-weather/blob/main/screen.jpg)](https://allfreelance.github.io/vue-weather/)
